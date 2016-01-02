@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,10 +44,17 @@
     <Compile Include="Interfaces\IRolletService.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\RolletApi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Services\RolletService.cs" />
     <Compile Include="Services\Service.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartRollet.DAL\SmartRollet.DAL.csproj">
       <Project>{50BA0AEB-234F-4C84-A0FD-450702E38C44}</Project>
@@ -55,6 +64,40 @@
       <Project>{5738625B-0427-4EB5-9E31-44CD1A8FB8D2}</Project>
       <Name>SmartRollet.DomainModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\RolletApi\RolletService.wsdl" />
+    <None Include="Service References\RolletApi\RolletService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RolletApi\RolletService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RolletApi\RolletService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RolletApi\SmartRollet.BLL.RolletApi.RolletDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RolletApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RolletApi\RolletService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RolletApi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RolletApi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RolletApi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

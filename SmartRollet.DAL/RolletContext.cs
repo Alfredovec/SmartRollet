@@ -10,7 +10,7 @@ namespace SmartRollet.DAL
 {
     public class RolletContext : DbContext
     {
-        public RolletContext() : base("RolletContext")
+        public RolletContext() : base(@"Data Source=(localdb)\v11.0; AttachDbFilename=|DataDirectory|\RolletDb.mdf; Integrated Security=True")
         {
             Database.SetInitializer(new DbInitializer());
         }

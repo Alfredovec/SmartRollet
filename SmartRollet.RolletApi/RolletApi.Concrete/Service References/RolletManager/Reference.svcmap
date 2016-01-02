@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0f4619c-1454-412c-b201-c52510a3602d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:13349/RolletManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RolletManager.xsd" MetadataType="Schema" ID="90fd3748-7f28-48fa-9b63-601d33c4b263" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="RolletManager.disco" MetadataType="Disco" ID="529692c4-4189-4eb2-ba6f-c4ae5b9efd51" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?disco" />
+    <MetadataFile FileName="RolletManager1.xsd" MetadataType="Schema" ID="f3e47b73-aa47-488b-9ffc-b254bd8f2f0a" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="RolletManager.wsdl" MetadataType="Wsdl" ID="f5ad1737-51db-4307-9fca-4c7f29b959a9" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?wsdl" />
+    <MetadataFile FileName="RolletManager2.xsd" MetadataType="Schema" ID="5cf925bf-b822-4efd-ad31-44664b8fd08e" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
