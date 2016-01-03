@@ -22,9 +22,9 @@ namespace SmartRollet.Web.Controllers
             _service = service;
         }
 
-        public ActionResult Index()
+        public ActionResult Manage()
         { 
-            return Json(_service.RolletService.GetAll(), JsonRequestBehavior.AllowGet);
+            return View();
         }
 
     }

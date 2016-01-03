@@ -1,0 +1,110 @@
+﻿html {
+    background-color: white;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    border-left: 7px dashed rgb(161, 211, 255);
+    border-right: 7px dashed rgb(161, 211, 255);
+    background-color: aliceblue;
+    width: 900px;
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+}
+
+input {
+    width: 50px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+label {
+    display: block;
+    margin: 10px
+}
+
+div.separator-ver {
+    border-left: 5px dashed rgb(161, 211, 255);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.ligth-sensor {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+div.sensor-control img {
+    height: 100px;
+    width: 100px;
+}
+
+div.rollet-panel {
+    margin: 20px;
+}
+
+div.status {
+    text-align: center;
+}
+
+div.control-buttons {
+    margin: 20px;
+}
+
+div.rollet-wrapper {
+    position: relative;
+    height: 230px;
+    width: 200px;
+    background: url('/Images/rollet.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.rollet-wrapper .blinds-wrapper {
+    position: relative;
+    overflow: hidden;
+    top: 52px;
+    left: 17px;
+    height: 169px;
+    width: 168px;
+}
+
+.blinds-wrapper .blinds {
+    position: absolute;
+    top: 0;
+    height: 169px;
+    width: 168px;
+    background: url('/Images/blinds.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.rollet {
+    display: flex;
+    justify-content: space-around;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-around;
+}
+
+.control-buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.rollet-management {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}

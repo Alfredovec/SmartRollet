@@ -3,14 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title</title> 
+    @Styles.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/rollet-style.css")
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    @RenderBody()
+    <main>
+        @RenderBody()
+    </main>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/rollet-script.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
