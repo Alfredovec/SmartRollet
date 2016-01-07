@@ -20,7 +20,7 @@ namespace BusinessLogic.Concrete
             _rolletRepository = new RolletRepositoryClient();    
         }
 
-        public RolletBlo GetRollet(int value)
+        public RolletBlo GetRollet(int id)
         {
             var rollet = _rolletRepository.GetRollet();
 
@@ -28,8 +28,22 @@ namespace BusinessLogic.Concrete
             {
                 Id = rollet.Id,
                 Height = rollet.Height,
-                Width = rollet.Width
+                Width = rollet.Width,
+                OpenedPart = rollet.OpenedPart
             };
+        }
+
+        public void UpdateRollet(RolletBlo rolletBlo)
+        {
+            var rollet = new Rollet()
+            {
+                Id = rolletBlo.Id,
+                Height = rolletBlo.Height,
+                Width = rolletBlo.Width,
+                OpenedPart = rolletBlo.OpenedPart
+            };
+
+            _rolletRepository.UpdateRollet(rollet);
         }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0f4619c-1454-412c-b201-c52510a3602d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="db350af2-a1e7-4b13-8566-6226a4f2aa53" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:13349/RolletManager.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RolletManager.xsd" MetadataType="Schema" ID="90fd3748-7f28-48fa-9b63-601d33c4b263" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd0" />
-    <MetadataFile FileName="RolletManager.disco" MetadataType="Disco" ID="529692c4-4189-4eb2-ba6f-c4ae5b9efd51" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?disco" />
-    <MetadataFile FileName="RolletManager1.xsd" MetadataType="Schema" ID="f3e47b73-aa47-488b-9ffc-b254bd8f2f0a" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd2" />
-    <MetadataFile FileName="RolletManager.wsdl" MetadataType="Wsdl" ID="f5ad1737-51db-4307-9fca-4c7f29b959a9" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?wsdl" />
-    <MetadataFile FileName="RolletManager2.xsd" MetadataType="Schema" ID="5cf925bf-b822-4efd-ad31-44664b8fd08e" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="RolletManager.xsd" MetadataType="Schema" ID="640180b7-fda9-46b7-8924-c5ddec83fe02" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="RolletManager.disco" MetadataType="Disco" ID="f16fd87e-16b6-402c-9d4f-e06367d24107" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?disco" />
+    <MetadataFile FileName="RolletManager1.xsd" MetadataType="Schema" ID="fffb2f6c-ec99-4121-aeb5-476273d7779b" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="RolletManager.wsdl" MetadataType="Wsdl" ID="eb56d0a4-3610-4922-942e-03939f2bb362" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?wsdl" />
+    <MetadataFile FileName="RolletManager2.xsd" MetadataType="Schema" ID="0214bc06-1485-4ec4-9732-9e91b35ccc21" SourceId="1" SourceUrl="http://localhost:13349/RolletManager.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

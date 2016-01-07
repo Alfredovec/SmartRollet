@@ -29,6 +29,9 @@ namespace RolletApi.Concrete.RolletManager {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OpenedPartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WidthField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -68,6 +71,19 @@ namespace RolletApi.Concrete.RolletManager {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OpenedPart {
+            get {
+                return this.OpenedPartField;
+            }
+            set {
+                if ((this.OpenedPartField.Equals(value) != true)) {
+                    this.OpenedPartField = value;
+                    this.RaisePropertyChanged("OpenedPart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Width {
             get {
                 return this.WidthField;
@@ -99,6 +115,12 @@ namespace RolletApi.Concrete.RolletManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/GetRollet", ReplyAction="http://tempuri.org/IRolletManager/GetRolletResponse")]
         System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo> GetRolletAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/UpdateRollet", ReplyAction="http://tempuri.org/IRolletManager/UpdateRolletResponse")]
+        void UpdateRollet(RolletApi.Concrete.RolletManager.RolletBlo rollet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/UpdateRollet", ReplyAction="http://tempuri.org/IRolletManager/UpdateRolletResponse")]
+        System.Threading.Tasks.Task UpdateRolletAsync(RolletApi.Concrete.RolletManager.RolletBlo rollet);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +156,14 @@ namespace RolletApi.Concrete.RolletManager {
         
         public System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo> GetRolletAsync(int value) {
             return base.Channel.GetRolletAsync(value);
+        }
+        
+        public void UpdateRollet(RolletApi.Concrete.RolletManager.RolletBlo rollet) {
+            base.Channel.UpdateRollet(rollet);
+        }
+        
+        public System.Threading.Tasks.Task UpdateRolletAsync(RolletApi.Concrete.RolletManager.RolletBlo rollet) {
+            return base.Channel.UpdateRolletAsync(rollet);
         }
     }
 }

@@ -30,7 +30,7 @@ div.separator-ver {
     border-left: 5px dashed rgb(161, 211, 255);
 }
 
-main {
+form {
     display: flex;
     justify-content: space-around;
 }

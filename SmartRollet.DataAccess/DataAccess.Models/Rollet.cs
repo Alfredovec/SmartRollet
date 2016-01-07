@@ -20,5 +20,8 @@ namespace DataAccess.Models
 
         [DataMember]
         public int Height { get; set; }
+
+        [DataMember]
+        public int OpenedPart { get; set; }
     }
 }

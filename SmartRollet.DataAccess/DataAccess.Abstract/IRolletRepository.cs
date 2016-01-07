@@ -13,5 +13,8 @@ namespace DataAccess.Abstract
     {
         [OperationContract]
         Rollet GetRollet();
+
+        [OperationContract]
+        void UpdateRollet(Rollet rollet);
     }
 }

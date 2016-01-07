@@ -29,6 +29,9 @@ namespace BusinessLogic.Concrete.RolletRepository {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OpenedPartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WidthField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -68,6 +71,19 @@ namespace BusinessLogic.Concrete.RolletRepository {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OpenedPart {
+            get {
+                return this.OpenedPartField;
+            }
+            set {
+                if ((this.OpenedPartField.Equals(value) != true)) {
+                    this.OpenedPartField = value;
+                    this.RaisePropertyChanged("OpenedPart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Width {
             get {
                 return this.WidthField;
@@ -99,6 +115,12 @@ namespace BusinessLogic.Concrete.RolletRepository {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/GetRollet", ReplyAction="http://tempuri.org/IRolletRepository/GetRolletResponse")]
         System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet> GetRolletAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/UpdateRollet", ReplyAction="http://tempuri.org/IRolletRepository/UpdateRolletResponse")]
+        void UpdateRollet(BusinessLogic.Concrete.RolletRepository.Rollet rollet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/UpdateRollet", ReplyAction="http://tempuri.org/IRolletRepository/UpdateRolletResponse")]
+        System.Threading.Tasks.Task UpdateRolletAsync(BusinessLogic.Concrete.RolletRepository.Rollet rollet);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +156,14 @@ namespace BusinessLogic.Concrete.RolletRepository {
         
         public System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet> GetRolletAsync() {
             return base.Channel.GetRolletAsync();
+        }
+        
+        public void UpdateRollet(BusinessLogic.Concrete.RolletRepository.Rollet rollet) {
+            base.Channel.UpdateRollet(rollet);
+        }
+        
+        public System.Threading.Tasks.Task UpdateRolletAsync(BusinessLogic.Concrete.RolletRepository.Rollet rollet) {
+            return base.Channel.UpdateRolletAsync(rollet);
         }
     }
 }

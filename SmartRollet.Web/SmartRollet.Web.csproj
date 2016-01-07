@@ -146,13 +146,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RolletController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RolletViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +247,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\rollet-manage-script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -262,27 +263,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Rollet\Manage.cshtml" />
+    <Content Include="Views\Rollet\Empty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SmartRollet.BLL\SmartRollet.BLL.csproj">
-      <Project>{8EDF9256-8C1A-410E-8F86-49ECEE7018E8}</Project>
-      <Name>SmartRollet.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SmartRollet.Configuration\SmartRollet.Configuration.csproj">
-      <Project>{D813DCB2-9272-42DD-AEBB-4C87D33F5713}</Project>
-      <Name>SmartRollet.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SmartRollet.DomainModel\SmartRollet.DomainModel.csproj">
-      <Project>{5738625B-0427-4EB5-9E31-44CD1A8FB8D2}</Project>
-      <Name>SmartRollet.DomainModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

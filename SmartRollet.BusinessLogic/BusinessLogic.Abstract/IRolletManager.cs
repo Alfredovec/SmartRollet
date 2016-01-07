@@ -13,5 +13,8 @@ namespace BusinessLogic.Abstract
     {
         [OperationContract]
         RolletBlo GetRollet(int value);
+
+        [OperationContract]
+        void UpdateRollet(RolletBlo rollet);
     }
 }

@@ -3,14 +3,16 @@ using DataAccess.Models;
 
 namespace DataAccess.Concrete
 {
-    public class DbInitializer : DropCreateDatabaseAlways<RolletContext>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<RolletContext>
     {
         protected override void Seed(RolletContext context)
         {
             context.Rollets.Add(new Rollet()
             {
-                Height = 42,
-                Width = 42
+                Id = 1,
+                Height = 169,
+                Width = 100,
+                OpenedPart = 0
             });
 
             base.Seed(context);

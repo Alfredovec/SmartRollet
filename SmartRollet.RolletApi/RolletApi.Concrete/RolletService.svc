@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="RolletApi.Concrete.RolletService" CodeBehind="RolletService.svc.cs" %>

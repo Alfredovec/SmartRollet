@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title> 
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/rollet-style.css")
@@ -13,9 +13,8 @@
     <main>
         @RenderBody()
     </main>
-
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/rollet-script.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

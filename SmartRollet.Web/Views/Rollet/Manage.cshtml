@@ -1,41 +1,56 @@
-﻿<div class="ligth-sensor">
-    <div class="sensor-control">
-        <img src="~/Images/light-sensor.png"/>
-        <label>Light sensor</label>
-        <input type="number" value="52"/>
-    </div>
-</div>
-<div class="rollet">
-    <div class="rollet-panel">
-        <div class="status">
-            <div class="status-string">Full open</div>
-            <div class="status-num">100%</div>
+﻿@using System.Runtime.InteropServices
+@model SmartRollet.Web.Models.RolletViewModel
+
+@using (Ajax.BeginForm("Manage", new AjaxOptions()))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Height)
+    @Html.HiddenFor(m => m.OpenedPart)
+    
+    <div class="ligth-sensor">
+        <div class="sensor-control">
+            <img src="~/Images/light-sensor.png" />
+            <label>Light sensor</label>
+            <input type="number" value="52" />
         </div>
-        <div class="rollet-image">
-            <div class="rollet-wrapper">
-                <div class="blinds-wrapper">
-                    <div class="blinds"></div>
+    </div>
+    <div class="rollet">
+        <div class="rollet-panel">
+            <div class="status">
+                <div class="status-string">Ready</div>
+            </div>
+            <div class="rollet-image">
+                <div class="rollet-wrapper">
+                    <div class="blinds-wrapper">
+                        <div class="blinds"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-panel">
+            <div class="control-buttons">
+                <button type="submit" class="btn btn-info btn-lg" id="full-open">Full opened</button>
+                <button type="submit" class="btn btn-info btn-lg" id="open">Open</button>
+                <button type="submit" class="btn btn-info btn-lg" id="auto">Auto</button>
+                <button type="submit" class="btn btn-info btn-lg" id="close">Close</button>
+                <button type="submit" class="btn btn-info btn-lg" id="full-close">Full closed</button>
+            </div>
+            <div class="rollet-management">
+                <div class="control">
+                    <label>Min light</label>
+                    <input type="number" class="min-light" value="47" />
+                </div>
+                <div class="control">
+                    <label>Open-closing step</label>
+                    <input type="number" class="open-closing-step" value="30" />
                 </div>
             </div>
         </div>
     </div>
-    <div class="control-panel">
-        <div class="control-buttons">
-            <button type="button" class="btn btn-info btn-lg">Full open</button>
-            <button type="button" class="btn btn-info btn-lg">Open</button>
-            <button type="button" class="btn btn-info btn-lg">Auto</button>
-            <button type="button" class="btn btn-info btn-lg">Close</button>
-            <button type="button" class="btn btn-info btn-lg">Full close</button>
-        </div>
-        <div class="rollet-management">
-            <div class="control">
-                <label>Min light</label>
-                <input type="number" class="min-light" value="47" />
-            </div>
-            <div class="control">
-                <label>Open-closing step</label>
-                <input type="number" class="open-closing-step" value="5" />
-            </div>
-        </div>
-    </div>
-</div>
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/rollet-manage-script.js")
+}
