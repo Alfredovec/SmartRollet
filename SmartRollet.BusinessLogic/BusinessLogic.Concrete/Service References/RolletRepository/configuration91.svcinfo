@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="z6WSEbaF6zgu7PnzRC85wwmDP50=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="52zQtl5LBe9twDcezAJTKTauKnU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IRolletRepository">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IRolletRepository" contract="RolletRepository.IRolletRepository" bindingType="basicHttpBinding" address="http://localhost:13793/RolletRepository.svc" bindingConfiguration="BasicHttpBinding_IRolletRepository">
+    <endpoint name="BasicHttpBinding_IRolletRepository" contract="RolletRepository.IRolletRepository" bindingType="basicHttpBinding" address="http://data.smart-rollet.com/RolletRepository.svc" bindingConfiguration="BasicHttpBinding_IRolletRepository">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:13793/RolletRepository.svc</serializedValue>
+          <serializedValue>http://data.smart-rollet.com/RolletRepository.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

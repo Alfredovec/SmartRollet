@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Configuration
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,11 +11,44 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <main>
-        @RenderBody()
-    </main>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <main>
+            @RenderBody()
+        </main>
+    }
+    else
+    {
+        <div class="login-container-outer">
+            <div class="login-container-inner">
+                <button class="btn btn-success btn-lg button-login" onclick="window.signin()">Login</button>
+            </div>
+        </div>
+    }
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
     @RenderSection("scripts", required: false)
+
+    <script src="https://cdn.auth0.com/js/lock-9.1.min.js"></script>
+    <script type="text/javascript">
+        var lock = new Auth0Lock('@ConfigurationManager.AppSettings["auth0:ClientId"]', '@ConfigurationManager.AppSettings["auth0:Domain"]');
+        function signin() {
+            lock.show({
+                connections: ['Username-Password-Authentication', 'google-oauth2', 'windowslive', 'twitter' ],
+                dict: {
+                    signin: {
+                        title: "Smart Rollet Login"
+                    }
+                },
+                icon: 'http://svitkomfortu.com.ua/images/stories/virtuemart/category/zashhitnye-rollety-sk.png',
+                socialBigButtons: false,
+                callbackURL: 'http://smart-rollet.com/Account/LoginCallback',
+                responseType: 'code',
+                authParams: {
+                    scope: 'openid profile'
+                }
+            });
+        }
+    </script>
 </body>
 </html>

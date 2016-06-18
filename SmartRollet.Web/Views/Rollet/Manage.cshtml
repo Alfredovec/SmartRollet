@@ -1,7 +1,7 @@
 ﻿@using System.Runtime.InteropServices
 @model SmartRollet.Web.Models.RolletViewModel
 
-@using (Ajax.BeginForm("Manage", new AjaxOptions()))
+@using (Ajax.BeginForm("Manage", null, new AjaxOptions(), new { id = "manage" }))
 {
     @Html.AntiForgeryToken()
     

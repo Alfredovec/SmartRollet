@@ -11,6 +11,7 @@ using BusinessLogic.Models;
 
 namespace BusinessLogic.Concrete
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class RolletManager : IRolletManager
     {
         private readonly IRolletRepository _rolletRepository;

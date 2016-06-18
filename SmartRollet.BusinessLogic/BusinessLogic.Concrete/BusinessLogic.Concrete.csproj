@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,13 +72,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web.config" />
-    <None Include="Service References\RolletRepository\RolletRepository.wsdl" />
-    <None Include="Service References\RolletRepository\RolletRepository1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\RolletRepository\RolletRepository2.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RolletManager.svc.cs">
@@ -94,7 +88,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\RolletRepository\RolletRepository.wsdl" />
     <None Include="Service References\RolletRepository\RolletRepository.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RolletRepository\RolletRepository1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RolletRepository\RolletRepository2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

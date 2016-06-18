@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24664b10-c250-4e62-a97a-0ad943f8a5cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28f37214-e964-49be-8f67-481d7c8445c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:13793/RolletRepository.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://data.smart-rollet.com/RolletRepository.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RolletRepository.xsd" MetadataType="Schema" ID="68ae4a93-7958-4b05-9578-7609e272fd09" SourceId="1" SourceUrl="http://localhost:13793/RolletRepository.svc?xsd=xsd0" />
-    <MetadataFile FileName="RolletRepository.disco" MetadataType="Disco" ID="2256081a-8091-44b5-8c87-41963eb25f8d" SourceId="1" SourceUrl="http://localhost:13793/RolletRepository.svc?disco" />
-    <MetadataFile FileName="RolletRepository.wsdl" MetadataType="Wsdl" ID="2585bba0-55fb-4f3f-8651-683db8039aa2" SourceId="1" SourceUrl="http://localhost:13793/RolletRepository.svc?wsdl" />
-    <MetadataFile FileName="RolletRepository1.xsd" MetadataType="Schema" ID="4fcc0267-79ac-488e-a9d6-08d117085e83" SourceId="1" SourceUrl="http://localhost:13793/RolletRepository.svc?xsd=xsd2" />
-    <MetadataFile FileName="RolletRepository2.xsd" MetadataType="Schema" ID="9ca7da93-b680-43b2-ae8d-a161446805d2" SourceId="1" SourceUrl="http://localhost:13793/RolletRepository.svc?xsd=xsd1" />
+    <MetadataFile FileName="RolletRepository.disco" MetadataType="Disco" ID="a0f42d12-fd4d-4965-94a4-bdcda78fff77" SourceId="1" SourceUrl="http://data.smart-rollet.com/RolletRepository.svc?disco" />
+    <MetadataFile FileName="RolletRepository.xsd" MetadataType="Schema" ID="ac9345d8-74ca-4708-bbc4-587d4cbad1c2" SourceId="1" SourceUrl="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd0" />
+    <MetadataFile FileName="RolletRepository1.xsd" MetadataType="Schema" ID="75bdb69b-1fda-446d-8632-05f23d42ed13" SourceId="1" SourceUrl="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd2" />
+    <MetadataFile FileName="RolletRepository.wsdl" MetadataType="Wsdl" ID="c8baa54f-b209-4190-8a81-2355cf54d99b" SourceId="1" SourceUrl="http://data.smart-rollet.com/RolletRepository.svc?wsdl" />
+    <MetadataFile FileName="RolletRepository2.xsd" MetadataType="Schema" ID="a0012a9a-a02c-4669-8437-d94109e0113f" SourceId="1" SourceUrl="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

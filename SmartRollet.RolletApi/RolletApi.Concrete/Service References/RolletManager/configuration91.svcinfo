@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="lLT2bMm+vCYsaLrHEIaWLD0yLi0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="n1XWItOjzBv4ONpvh+CreUxPM4s=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IRolletManager">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IRolletManager" contract="RolletManager.IRolletManager" bindingType="basicHttpBinding" address="http://localhost:13349/RolletManager.svc" bindingConfiguration="BasicHttpBinding_IRolletManager">
+    <endpoint name="BasicHttpBinding_IRolletManager" contract="RolletManager.IRolletManager" bindingType="basicHttpBinding" address="http://domain.smart-rollet.com/RolletManager.svc" bindingConfiguration="BasicHttpBinding_IRolletManager">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:13349/RolletManager.svc</serializedValue>
+          <serializedValue>http://domain.smart-rollet.com/RolletManager.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -30,7 +30,7 @@ div.separator-ver {
     border-left: 5px dashed rgb(161, 211, 255);
 }
 
-form {
+form[id=manage] {
     display: flex;
     justify-content: space-around;
 }
@@ -107,4 +107,22 @@ div.rollet-wrapper {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
+}
+
+.login-container-outer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.login-container-inner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-login {
+    height: 100px;
+    width: 200px;
+    font-size: 30px; 
 }
