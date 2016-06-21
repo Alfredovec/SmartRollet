@@ -12,9 +12,12 @@ namespace BusinessLogic.Abstract
     public interface IRolletManager
     {
         [OperationContract]
-        RolletBlo GetRollet(int value);
+        IEnumerable<RolletBlo> GetRollets(string email);
 
         [OperationContract]
         void UpdateRollet(RolletBlo rollet);
+
+        [OperationContract]
+        void ChangePosition(int id, int change);
     }
 }

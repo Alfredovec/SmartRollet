@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Models;
+using DataAccess.Models.Entities;
 
 namespace DataAccess.Abstract
 {
@@ -12,9 +12,12 @@ namespace DataAccess.Abstract
     public interface IRolletRepository
     {
         [OperationContract]
-        Rollet GetRollet();
+        IEnumerable<Rollet> GetRollets(string email);
 
         [OperationContract]
         void UpdateRollet(Rollet rollet);
+
+        [OperationContract]
+        void ChangePosition(int id, int change);
     }
 }

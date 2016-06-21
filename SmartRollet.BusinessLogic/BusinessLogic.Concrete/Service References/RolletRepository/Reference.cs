@@ -15,7 +15,7 @@ namespace BusinessLogic.Concrete.RolletRepository {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rollet", Namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rollet", Namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models.Entities")]
     [System.SerializableAttribute()]
     public partial class Rollet : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -29,7 +29,16 @@ namespace BusinessLogic.Concrete.RolletRepository {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OpenedPartField;
+        private int LighterIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LighterStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RolletStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WidthField;
@@ -71,14 +80,53 @@ namespace BusinessLogic.Concrete.RolletRepository {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OpenedPart {
+        public int LighterId {
             get {
-                return this.OpenedPartField;
+                return this.LighterIdField;
             }
             set {
-                if ((this.OpenedPartField.Equals(value) != true)) {
-                    this.OpenedPartField = value;
-                    this.RaisePropertyChanged("OpenedPart");
+                if ((this.LighterIdField.Equals(value) != true)) {
+                    this.LighterIdField = value;
+                    this.RaisePropertyChanged("LighterId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LighterState {
+            get {
+                return this.LighterStateField;
+            }
+            set {
+                if ((this.LighterStateField.Equals(value) != true)) {
+                    this.LighterStateField = value;
+                    this.RaisePropertyChanged("LighterState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RolletState {
+            get {
+                return this.RolletStateField;
+            }
+            set {
+                if ((this.RolletStateField.Equals(value) != true)) {
+                    this.RolletStateField = value;
+                    this.RaisePropertyChanged("RolletState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
                 }
             }
         }
@@ -110,17 +158,23 @@ namespace BusinessLogic.Concrete.RolletRepository {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RolletRepository.IRolletRepository")]
     public interface IRolletRepository {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/GetRollet", ReplyAction="http://tempuri.org/IRolletRepository/GetRolletResponse")]
-        BusinessLogic.Concrete.RolletRepository.Rollet GetRollet();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/GetRollets", ReplyAction="http://tempuri.org/IRolletRepository/GetRolletsResponse")]
+        BusinessLogic.Concrete.RolletRepository.Rollet[] GetRollets(string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/GetRollet", ReplyAction="http://tempuri.org/IRolletRepository/GetRolletResponse")]
-        System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet> GetRolletAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/GetRollets", ReplyAction="http://tempuri.org/IRolletRepository/GetRolletsResponse")]
+        System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet[]> GetRolletsAsync(string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/UpdateRollet", ReplyAction="http://tempuri.org/IRolletRepository/UpdateRolletResponse")]
         void UpdateRollet(BusinessLogic.Concrete.RolletRepository.Rollet rollet);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/UpdateRollet", ReplyAction="http://tempuri.org/IRolletRepository/UpdateRolletResponse")]
         System.Threading.Tasks.Task UpdateRolletAsync(BusinessLogic.Concrete.RolletRepository.Rollet rollet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/ChangePosition", ReplyAction="http://tempuri.org/IRolletRepository/ChangePositionResponse")]
+        void ChangePosition(int id, int change);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletRepository/ChangePosition", ReplyAction="http://tempuri.org/IRolletRepository/ChangePositionResponse")]
+        System.Threading.Tasks.Task ChangePositionAsync(int id, int change);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -150,12 +204,12 @@ namespace BusinessLogic.Concrete.RolletRepository {
                 base(binding, remoteAddress) {
         }
         
-        public BusinessLogic.Concrete.RolletRepository.Rollet GetRollet() {
-            return base.Channel.GetRollet();
+        public BusinessLogic.Concrete.RolletRepository.Rollet[] GetRollets(string email) {
+            return base.Channel.GetRollets(email);
         }
         
-        public System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet> GetRolletAsync() {
-            return base.Channel.GetRolletAsync();
+        public System.Threading.Tasks.Task<BusinessLogic.Concrete.RolletRepository.Rollet[]> GetRolletsAsync(string email) {
+            return base.Channel.GetRolletsAsync(email);
         }
         
         public void UpdateRollet(BusinessLogic.Concrete.RolletRepository.Rollet rollet) {
@@ -164,6 +218,14 @@ namespace BusinessLogic.Concrete.RolletRepository {
         
         public System.Threading.Tasks.Task UpdateRolletAsync(BusinessLogic.Concrete.RolletRepository.Rollet rollet) {
             return base.Channel.UpdateRolletAsync(rollet);
+        }
+        
+        public void ChangePosition(int id, int change) {
+            base.Channel.ChangePosition(id, change);
+        }
+        
+        public System.Threading.Tasks.Task ChangePositionAsync(int id, int change) {
+            return base.Channel.ChangePositionAsync(id, change);
         }
     }
 }

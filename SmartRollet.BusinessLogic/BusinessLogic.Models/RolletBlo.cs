@@ -14,12 +14,21 @@ namespace BusinessLogic.Models
         public int Id { get; set; }
 
         [DataMember]
-        public int Width { get; set; }
-
-        [DataMember]
         public int Height { get; set; }
 
         [DataMember]
-        public int OpenedPart { get; set; }
+        public int Width { get; set; }
+
+        [DataMember]
+        public int RolletState { get; set; }
+
+        [DataMember]
+        public int LighterState { get; set; }
+
+        [DataMember]
+        public int UserId { get; set; }
+
+        [DataMember]
+        public int LighterId { get; set; }
     }
 }

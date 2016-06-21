@@ -4,14 +4,14 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models" />
+      <xsd:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models.Entities" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IRolletRepository_GetRollet_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRollet" />
+  <wsdl:message name="IRolletRepository_GetRollets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRollets" />
   </wsdl:message>
-  <wsdl:message name="IRolletRepository_GetRollet_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRolletResponse" />
+  <wsdl:message name="IRolletRepository_GetRollets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolletsResponse" />
   </wsdl:message>
   <wsdl:message name="IRolletRepository_UpdateRollet_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRollet" />
@@ -19,20 +19,30 @@
   <wsdl:message name="IRolletRepository_UpdateRollet_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRolletResponse" />
   </wsdl:message>
+  <wsdl:message name="IRolletRepository_ChangePosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePosition" />
+  </wsdl:message>
+  <wsdl:message name="IRolletRepository_ChangePosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePositionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IRolletRepository">
-    <wsdl:operation name="GetRollet">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRolletRepository/GetRollet" message="tns:IRolletRepository_GetRollet_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRolletRepository/GetRolletResponse" message="tns:IRolletRepository_GetRollet_OutputMessage" />
+    <wsdl:operation name="GetRollets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolletRepository/GetRollets" message="tns:IRolletRepository_GetRollets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolletRepository/GetRolletsResponse" message="tns:IRolletRepository_GetRollets_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateRollet">
       <wsdl:input wsaw:Action="http://tempuri.org/IRolletRepository/UpdateRollet" message="tns:IRolletRepository_UpdateRollet_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRolletRepository/UpdateRolletResponse" message="tns:IRolletRepository_UpdateRollet_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ChangePosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolletRepository/ChangePosition" message="tns:IRolletRepository_ChangePosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolletRepository/ChangePositionResponse" message="tns:IRolletRepository_ChangePosition_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRolletRepository" type="tns:IRolletRepository">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetRollet">
-      <soap:operation soapAction="http://tempuri.org/IRolletRepository/GetRollet" style="document" />
+    <wsdl:operation name="GetRollets">
+      <soap:operation soapAction="http://tempuri.org/IRolletRepository/GetRollets" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateRollet">
       <soap:operation soapAction="http://tempuri.org/IRolletRepository/UpdateRollet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePosition">
+      <soap:operation soapAction="http://tempuri.org/IRolletRepository/ChangePosition" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

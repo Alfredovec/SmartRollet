@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IdentityModel.Services;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using Auth0;
 using Auth0.AspNet;
+using SmartRollet.Web.Models;
 
 namespace SmartRollet.Web.Controllers
 {
@@ -47,6 +50,21 @@ namespace SmartRollet.Web.Controllers
             {
                 var state = HttpUtility.ParseQueryString(HttpContext.Request.QueryString["state"]);
                 HttpContext.Response.Redirect(state["ru"], true);
+            }
+
+            var httpClient = new HttpClient();
+            var response = httpClient.GetAsync(@"http://api.smart-rollet.com/account?email=" + profile.Email).Result;
+            var responseString = response.Content.ReadAsStringAsync().Result;
+
+            if (responseString == null)
+            {
+                var values = new Dictionary<string, string>
+                {
+                    { "Email", profile.Email }
+                };
+
+                var postContent = new FormUrlEncodedContent(values);
+                response = httpClient.PostAsync(@"http://api.smart-rollet.com/account", postContent).Result;
             }
 
             return RedirectToAction("Manage", "Rollet");

@@ -5,13 +5,15 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using AutoMapper;
 using BusinessLogic.Abstract;
+using BusinessLogic.Concrete.Config;
 using BusinessLogic.Concrete.RolletRepository;
 using BusinessLogic.Models;
 
 namespace BusinessLogic.Concrete
 {
-    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
+    [AutomapServiceBehavior]
     public class RolletManager : IRolletManager
     {
         private readonly IRolletRepository _rolletRepository;
@@ -21,30 +23,21 @@ namespace BusinessLogic.Concrete
             _rolletRepository = new RolletRepositoryClient();    
         }
 
-        public RolletBlo GetRollet(int id)
+        public IEnumerable<RolletBlo> GetRollets(string email)
         {
-            var rollet = _rolletRepository.GetRollet();
-
-            return new RolletBlo()
-            {
-                Id = rollet.Id,
-                Height = rollet.Height,
-                Width = rollet.Width,
-                OpenedPart = rollet.OpenedPart
-            };
+            var rollets = _rolletRepository.GetRollets(email);
+            return Mapper.Map<IEnumerable<RolletBlo>>(rollets);
         }
 
         public void UpdateRollet(RolletBlo rolletBlo)
         {
-            var rollet = new Rollet()
-            {
-                Id = rolletBlo.Id,
-                Height = rolletBlo.Height,
-                Width = rolletBlo.Width,
-                OpenedPart = rolletBlo.OpenedPart
-            };
-
+            var rollet = Mapper.Map<Rollet>(rolletBlo);
             _rolletRepository.UpdateRollet(rollet);
+        }
+
+        public void ChangePosition(int id, int change)
+        {
+            _rolletRepository.ChangePosition(id, change);
         }
     }
 }

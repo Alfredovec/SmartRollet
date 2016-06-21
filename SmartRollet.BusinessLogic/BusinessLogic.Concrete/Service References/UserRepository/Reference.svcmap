@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="305b4f55-3e50-45ce-84da-c43371aad65c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://data.smart-rollet.com/UserRepository.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserRepository.xsd" MetadataType="Schema" ID="ac97b2ad-757e-4a63-a9d3-df15a0b34642" SourceId="1" SourceUrl="http://data.smart-rollet.com/UserRepository.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserRepository.wsdl" MetadataType="Wsdl" ID="a7f478a9-55b3-4a9e-b287-b7f0074b6e4f" SourceId="1" SourceUrl="http://data.smart-rollet.com/UserRepository.svc?wsdl" />
+    <MetadataFile FileName="UserRepository.disco" MetadataType="Disco" ID="2d6b61f0-e56b-4b9a-ab2e-70ff25e61b6e" SourceId="1" SourceUrl="http://data.smart-rollet.com/UserRepository.svc?disco" />
+    <MetadataFile FileName="UserRepository1.xsd" MetadataType="Schema" ID="c745cdf8-3a02-4b1d-85f9-14c06e94cbf4" SourceId="1" SourceUrl="http://data.smart-rollet.com/UserRepository.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserRepository2.xsd" MetadataType="Schema" ID="dc49df51-ce7f-4f13-a1da-f739c3155c77" SourceId="1" SourceUrl="http://data.smart-rollet.com/UserRepository.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

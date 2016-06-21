@@ -1,46 +1,64 @@
 ﻿@using System.Runtime.InteropServices
-@model SmartRollet.Web.Models.RolletViewModel
+@model IEnumerable<SmartRollet.Web.Models.RolletViewModel>
 
-@using (Ajax.BeginForm("Manage", null, new AjaxOptions(), new { id = "manage" }))
+
+<label>
+    Auto mode
+    <input type="checkbox" class="automode" />
+</label>
+
+@for (int i = 0; i < Model.Count(); i++)
 {
-    @Html.AntiForgeryToken()
-    
-    @Html.HiddenFor(m => m.Id)
-    @Html.HiddenFor(m => m.Height)
-    @Html.HiddenFor(m => m.OpenedPart)
-    
-    <div class="ligth-sensor">
-        <div class="sensor-control">
-            <img src="~/Images/light-sensor.png" />
-            <label>Light sensor</label>
-            <input type="number" value="52" />
-        </div>
-    </div>
-    <div class="rollet">
-        <div class="rollet-panel">
-            <div class="status">
-                <div class="status-string">Ready</div>
+    var rollet = Model.ElementAt(i);
+    using (Ajax.BeginForm("Manage", null, new AjaxOptions(), new { id = "manage" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(m => m.ElementAt(i).Id)
+        @Html.HiddenFor(m => m.ElementAt(i).Height)
+        @Html.HiddenFor(m => m.ElementAt(i).Width)
+        @Html.HiddenFor(m => m.ElementAt(i).RolletState)
+
+        <div class="ligth-sensor">
+            <div class="sensor-control">
+                <img src="~/Images/light-sensor.png" />
+                <label>Light sensor</label>
+                <label class="state-value">@rollet.LighterState</label>
             </div>
-            <div class="rollet-image">
-                <div class="rollet-wrapper">
-                    <div class="blinds-wrapper">
-                        <div class="blinds"></div>
+        </div>
+        <div class="rollet">
+            <div class="rollet-panel">
+                <div class="status">
+                    <div class="status-string">Ready</div>
+                </div>
+                <div class="rollet-image">
+                    <div class="rollet-wrapper">
+                        <div class="blinds-wrapper">
+                            <div class="blinds"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="control-panel">
-            <div class="control-buttons">
-                <button type="submit" class="btn btn-info btn-lg" id="full-open">Full opened</button>
-                <button type="submit" class="btn btn-info btn-lg" id="open">Open</button>
-                <button type="submit" class="btn btn-info btn-lg" id="auto">Auto</button>
-                <button type="submit" class="btn btn-info btn-lg" id="close">Close</button>
-                <button type="submit" class="btn btn-info btn-lg" id="full-close">Full closed</button>
+            <div class="control-panel">
+                <div class="control-buttons">
+                    <button type="button" class="btn btn-info btn-lg" id="open">
+                        <span>Open</span> &#9650;
+                    </button>
+                    <button type="button" class="btn btn-info btn-lg" id="up">
+                        <span>Up</span> &#9651;
+                    </button>
+                    <button type="button" class="btn btn-info btn-lg" id="down">
+                        <span>Down</span> &#9661;
+                    </button>
+                    <button type="button" class="btn btn-info btn-lg" id="close">
+                        <span>Close</span> &#9660;
+                    </button>
+                </div>
             </div>
             <div class="rollet-management">
                 <div class="control">
-                    <label>Min light</label>
-                    <input type="number" class="min-light" value="47" />
+                    <label>Desired lightning</label>
+                    <input type="number" class="min-light" value="15" />
                 </div>
                 <div class="control">
                     <label>Open-closing step</label>
@@ -48,7 +66,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    }
 }
 
 @section scripts {

@@ -1,0 +1,17 @@
+﻿@model LighterEmul.Web.Models.Lighter
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id, new { id = "lighterId" })
+
+    <div class="ligth-sensor">
+        <div class="title">Light sensor</div>
+        <div class="sensor-control">
+            <img src="~/Images/light-sensor.png"/>
+            <div>
+                <input type="number" value="@Model.Value" id="lighter-input" />
+            </div>
+            </div>
+    </div>
+}
+

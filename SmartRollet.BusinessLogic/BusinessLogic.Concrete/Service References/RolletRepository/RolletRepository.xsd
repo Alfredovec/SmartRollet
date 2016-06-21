@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models" />
-  <xs:element name="GetRollet">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRolletResponse">
+  <xs:import schemaLocation="http://data.smart-rollet.com/RolletRepository.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Models.Entities" />
+  <xs:element name="GetRollets">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataAccess.Models" minOccurs="0" name="GetRolletResult" nillable="true" type="q1:Rollet" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolletsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataAccess.Models.Entities" minOccurs="0" name="GetRolletsResult" nillable="true" type="q1:ArrayOfRollet" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRollet">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataAccess.Models" minOccurs="0" name="rollet" nillable="true" type="q2:Rollet" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataAccess.Models.Entities" minOccurs="0" name="rollet" nillable="true" type="q2:Rollet" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRolletResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="change" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePositionResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

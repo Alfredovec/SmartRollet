@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AutoMapper;
 using RolletApi.Concrete.Models;
 using RolletApi.Concrete.RolletManager;
 
@@ -17,36 +18,31 @@ namespace RolletApi.Concrete.Controllers
         {
             _rolletManager = new RolletManagerClient();
         }
-
-        // GET api/rollet
+        
         [HttpGet]
-        public RolletDto Get(int id)
+        public IHttpActionResult Get(string email)
         {
-            var rollet = _rolletManager.GetRollet(id);
+            var rollets = _rolletManager.GetRollets(email);
+            var result = Mapper.Map<IEnumerable<RolletDto>>(rollets);
 
-            return new RolletDto()
-            {
-                Id = rollet.Id,
-                Height = rollet.Height,
-                Width = rollet.Width,
-                OpenedPart = rollet.OpenedPart
-            };
+            return Ok(result);
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(RolletDto model)
+        public IHttpActionResult Post(RolletDto model)
         {
-            var rollet = new RolletBlo()
-            {
-                Id = model.Id,
-                Width = model.Width,
-                Height = model.Height,
-                OpenedPart = model.OpenedPart
-            };
+            var rolletBlo = Mapper.Map<RolletBlo>(model);
+            _rolletManager.UpdateRollet(rolletBlo);
 
-            _rolletManager.UpdateRollet(rollet);
+            return Ok();
+        }
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+        [HttpPut]
+        public IHttpActionResult Put([FromUri]int id, [FromUri]int change)
+        {
+            _rolletManager.ChangePosition(id, change);
+
+            return Ok();
         }
     }
 }

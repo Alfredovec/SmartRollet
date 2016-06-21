@@ -29,7 +29,16 @@ namespace RolletApi.Concrete.RolletManager {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OpenedPartField;
+        private int LighterIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LighterStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RolletStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WidthField;
@@ -71,14 +80,53 @@ namespace RolletApi.Concrete.RolletManager {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OpenedPart {
+        public int LighterId {
             get {
-                return this.OpenedPartField;
+                return this.LighterIdField;
             }
             set {
-                if ((this.OpenedPartField.Equals(value) != true)) {
-                    this.OpenedPartField = value;
-                    this.RaisePropertyChanged("OpenedPart");
+                if ((this.LighterIdField.Equals(value) != true)) {
+                    this.LighterIdField = value;
+                    this.RaisePropertyChanged("LighterId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LighterState {
+            get {
+                return this.LighterStateField;
+            }
+            set {
+                if ((this.LighterStateField.Equals(value) != true)) {
+                    this.LighterStateField = value;
+                    this.RaisePropertyChanged("LighterState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RolletState {
+            get {
+                return this.RolletStateField;
+            }
+            set {
+                if ((this.RolletStateField.Equals(value) != true)) {
+                    this.RolletStateField = value;
+                    this.RaisePropertyChanged("RolletState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
                 }
             }
         }
@@ -110,17 +158,23 @@ namespace RolletApi.Concrete.RolletManager {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RolletManager.IRolletManager")]
     public interface IRolletManager {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/GetRollet", ReplyAction="http://tempuri.org/IRolletManager/GetRolletResponse")]
-        RolletApi.Concrete.RolletManager.RolletBlo GetRollet(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/GetRollets", ReplyAction="http://tempuri.org/IRolletManager/GetRolletsResponse")]
+        RolletApi.Concrete.RolletManager.RolletBlo[] GetRollets(string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/GetRollet", ReplyAction="http://tempuri.org/IRolletManager/GetRolletResponse")]
-        System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo> GetRolletAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/GetRollets", ReplyAction="http://tempuri.org/IRolletManager/GetRolletsResponse")]
+        System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo[]> GetRolletsAsync(string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/UpdateRollet", ReplyAction="http://tempuri.org/IRolletManager/UpdateRolletResponse")]
         void UpdateRollet(RolletApi.Concrete.RolletManager.RolletBlo rollet);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/UpdateRollet", ReplyAction="http://tempuri.org/IRolletManager/UpdateRolletResponse")]
         System.Threading.Tasks.Task UpdateRolletAsync(RolletApi.Concrete.RolletManager.RolletBlo rollet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/ChangePosition", ReplyAction="http://tempuri.org/IRolletManager/ChangePositionResponse")]
+        void ChangePosition(int id, int change);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolletManager/ChangePosition", ReplyAction="http://tempuri.org/IRolletManager/ChangePositionResponse")]
+        System.Threading.Tasks.Task ChangePositionAsync(int id, int change);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -150,12 +204,12 @@ namespace RolletApi.Concrete.RolletManager {
                 base(binding, remoteAddress) {
         }
         
-        public RolletApi.Concrete.RolletManager.RolletBlo GetRollet(int value) {
-            return base.Channel.GetRollet(value);
+        public RolletApi.Concrete.RolletManager.RolletBlo[] GetRollets(string email) {
+            return base.Channel.GetRollets(email);
         }
         
-        public System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo> GetRolletAsync(int value) {
-            return base.Channel.GetRolletAsync(value);
+        public System.Threading.Tasks.Task<RolletApi.Concrete.RolletManager.RolletBlo[]> GetRolletsAsync(string email) {
+            return base.Channel.GetRolletsAsync(email);
         }
         
         public void UpdateRollet(RolletApi.Concrete.RolletManager.RolletBlo rollet) {
@@ -164,6 +218,14 @@ namespace RolletApi.Concrete.RolletManager {
         
         public System.Threading.Tasks.Task UpdateRolletAsync(RolletApi.Concrete.RolletManager.RolletBlo rollet) {
             return base.Channel.UpdateRolletAsync(rollet);
+        }
+        
+        public void ChangePosition(int id, int change) {
+            base.Channel.ChangePosition(id, change);
+        }
+        
+        public System.Threading.Tasks.Task ChangePositionAsync(int id, int change) {
+            return base.Channel.ChangePositionAsync(id, change);
         }
     }
 }

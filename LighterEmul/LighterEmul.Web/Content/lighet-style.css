@@ -1,0 +1,41 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    border-left: 7px dashed rgb(161, 211, 255);
+    border-right: 7px dashed rgb(161, 211, 255);
+    background-color: aliceblue;
+    min-width: 400px;
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+    color: rgb(28, 28, 129);
+    padding: 100px 0 100px 0;
+}
+
+div.ligth-sensor {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+div.sensor-control img {
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+}
+
+#lighter-input {
+    color: rgba(148, 148, 5, 0.83);
+    text-align: center;
+    font-size: 40px;
+    width: 100px;
+    height: 70px;
+}
+
+.title {
+    font-size: 30px;
+}
+

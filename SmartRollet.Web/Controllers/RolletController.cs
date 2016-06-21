@@ -1,45 +1,56 @@
 ﻿using System.Collections.Generic;
+using System.IdentityModel.Services;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using SmartRollet.Web.Models;
 
 namespace SmartRollet.Web.Controllers
 {
-  public class RolletController : Controller
-  {
-    [HttpGet]
-    public ActionResult Manage()
+    public class RolletController : Controller
     {
-      var httpClient = new HttpClient();
+        [HttpGet]
+        public ActionResult Manage()
+        {
+            var httpClient = new HttpClient();
 
-      var response = httpClient.GetAsync(@"http://api.smart-rollet.com/rollet/1").Result;
+            if (!ClaimsPrincipal.Current.Identity.IsAuthenticated)
+            {
+                return View(new List<RolletViewModel>());
+            }
 
-      var responseString = response.Content.ReadAsStringAsync().Result;
+            var user = ClaimsPrincipal.Current;
+            var email = user.FindFirst("email").Value;
 
-      var jsonSerializer = new JavaScriptSerializer();
-      var rollet = jsonSerializer.Deserialize<RolletViewModel>(responseString);
+            var url = $"http://api.smart-rollet.com/Rollet?email={email}";
+            var response = httpClient.GetAsync(url).Result;
 
-      return View(rollet);
-    }
+            var responseString = response.Content.ReadAsStringAsync().Result;
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public void Manage(RolletViewModel model)
-    {
-      var httpClient = new HttpClient();
+            var jsonSerializer = new JavaScriptSerializer();
+            var rollets = jsonSerializer.Deserialize<IEnumerable<RolletViewModel>>(responseString);
 
-      var values = new Dictionary<string, string>
+            return View(rollets);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public void Manage(RolletViewModel model)
+        {
+            var httpClient = new HttpClient();
+
+            var values = new Dictionary<string, string>
             {
                 {"Id", model.Id.ToString() },
                 {"Height", model.Height.ToString() },
                 {"Width", model.Width.ToString() },
-                {"OpenedPart", model.OpenedPart.ToString() }
+                {"RolletState", model.RolletState.ToString() }
             };
 
-      var postContent = new FormUrlEncodedContent(values);
+            var postContent = new FormUrlEncodedContent(values);
 
-      var response = httpClient.PostAsync(@"http://api.smart-rollet.com/rollet/1", postContent).Result;
+            var response = httpClient.PostAsync(@"http://api.smart-rollet.com/rollet/1", postContent).Result;
+        }
     }
-  }
 }

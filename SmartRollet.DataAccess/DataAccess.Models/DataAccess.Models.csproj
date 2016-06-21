@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rollet.cs" />
+    <Compile Include="Entities\Lighter.cs" />
+    <Compile Include="Entities\Rollet.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="External\LighterState.cs" />
+    <Compile Include="External\RolletState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

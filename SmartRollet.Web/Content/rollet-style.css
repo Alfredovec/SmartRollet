@@ -56,7 +56,8 @@ div.status {
 }
 
 div.control-buttons {
-    margin: 20px;
+    margin: 20px 60px 20px 20px;
+    width: 140%;
 }
 
 div.rollet-wrapper {
@@ -126,3 +127,23 @@ div.rollet-wrapper {
     width: 200px;
     font-size: 30px; 
 }
+
+/*button[type=submit] {
+    display: flex;
+    justify-content: space-between;
+    text-shadow: #757594 0 0 5px;
+    background-color: #87c7ff;
+    border-color: #8fcbff;
+}
+
+button[type=submit]:hover {
+    background-color: #6ebcff;
+    border-color: #6fbbfd;
+    text-shadow: #757594 0 0 10px;
+}
+
+button[type=submit]:active, button[type=submit]:focus, button[type=submit]:active:focus {
+    background-color: #43a8fe;
+    border-color: #4eabfd;
+    text-shadow: #757594 0 0 10px;
+}*/
